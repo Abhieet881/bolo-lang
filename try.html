@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>चलाकर देखो — बोलो</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi:ital@0;1&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=JetBrains+Mono:wght@400;500&family=Source+Serif+4:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="brand" href="index.html">
+      <span class="brand-word">बोलो</span>
+      <span class="brand-en">bolo lang</span>
+    </a>
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+    <ul>
+      <li><a class="navlink" href="index.html">होम</a></li>
+      <li><a class="navlink" href="install.html">इंस्टॉल</a></li>
+      <li><a class="navlink" href="keywords.html">शब्दकोश</a></li>
+      <li><a class="navlink" href="guide.html">गाइड</a></li>
+      <li><a class="navlink" href="examples.html">उदाहरण</a></li>
+      <li><a class="navlink" href="about.html">परिचय</a></li>
+      <li><a class="navlink active" href="try.html">चलाकर देखो</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="page-hero">
+  <div class="wrap">
+    <div class="section-label">// प्लेग्राउंड</div>
+    <h1 class="page-title">चलाकर देखो</h1>
+    <p class="page-sub">बिना इंस्टॉल किए बोलो कोड को सीधे अपने ब्राउज़र में चलाएं और परिणाम देखें।</p>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <div style="display: flex; flex-direction: column; gap: 20px;">
+      <div>
+        <div class="pane-label">अपना बोलो कोड लिखें</div>
+        <textarea id="editor" class="editor-textarea" spellcheck="false">मान संख्या = 7
+अगर (संख्या % 2 == 0) {
+    छापो ("सम संख्या")
+} नहीं_तो {
+    छापो ("विषम संख्या")
+}</textarea>
+      </div>
+      <div>
+        <button id="run-btn" class="btn btn-primary" style="cursor: pointer;">चलाओ (Run) →</button>
+      </div>
+      <div>
+        <div class="pane-label">आउटपुट (Output)</div>
+        <pre id="output-pane" class="out-pane" style="min-height: 120px; font-family: 'JetBrains Mono', monospace; font-size: 14px; overflow-x: auto; white-space: pre-wrap; word-break: break-all;"></pre>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span class="deva">बोलो</span>
+    <p>एक हिंदी-वाक्य प्रोग्रामिंग भाषा &middot; Go में बनी &middot; पूरी तरह open और मुफ़्त</p>
+  </div>
+</footer>
+
+<script src="nav.js"></script>
+<script>
+  // Dynamic API configuration. Change this URL to your hosted server's URL in production.
+  const API_URL = 'http://localhost:8080/run';
+
+  const runBtn = document.getElementById('run-btn');
+  const editor = document.getElementById('editor');
+  const outputPane = document.getElementById('output-pane');
+
+  runBtn.addEventListener('click', async () => {
+    const code = editor.value;
+    
+    // UI Feedback: Loading state
+    runBtn.disabled = true;
+    runBtn.textContent = 'चलाया जा रहा है...';
+    outputPane.style.color = 'var(--text-dim)';
+    outputPane.textContent = 'कोड रन किया जा रहा है...';
+
+    try {
+      const response = await fetch(API_URL, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ code })
+      });
+
+      if (!response.ok) {
+        throw new Error('सर्वर से कनेक्ट करने में समस्या आई।');
+      }
+
+      const data = await response.json();
+
+      if (data.error) {
+        outputPane.style.color = 'var(--rose)';
+        outputPane.textContent = data.error;
+      } else {
+        outputPane.style.color = 'var(--mehendi)';
+        outputPane.textContent = data.output || 'प्रोग्राम सफलतापूर्वक समाप्त हुआ (कोई आउटपुट नहीं)।';
+      }
+    } catch (err) {
+      outputPane.style.color = 'var(--rose)';
+      outputPane.textContent = `त्रुटि: ${err.message}\n\nसुनिश्चित करें कि बोलो कोड रनर सर्वर चालू है और ${API_URL} पर उपलब्ध है।`;
+    } finally {
+      runBtn.disabled = false;
+      runBtn.textContent = 'चलाओ (Run) →';
+    }
+  });
+</script>
+</body>
+</html>
