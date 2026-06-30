@@ -1,0 +1,113 @@
+:root{
+  --ink:#16141c;
+  --ink-2:#1d1a24;
+  --paper:#f6f1e7;
+  --marigold:#e8a33d;
+  --mehendi:#8fae5e;
+  --rose:#c9695f;
+  --text-soft:#cdc6b8;
+  --text-dim:#8a8478;
+  --border:#332f3b;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--ink);
+  color:var(--text-soft);
+  font-family:'Source Serif 4', serif;
+  line-height:1.7;
+  font-size:17px;
+}
+.wrap{max-width:920px;margin:0 auto;padding:0 28px}
+.deva{font-family:'Tiro Devanagari Hindi', serif}
+.mono{font-family:'JetBrains Mono', monospace}
+a{color:inherit}
+
+/* nav */
+nav{position:sticky;top:0;z-index:10;background:rgba(22,20,28,.92);backdrop-filter:blur(6px);border-bottom:1px solid var(--border)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;padding:16px 28px;flex-wrap:wrap;gap:10px}
+.brand{display:flex;align-items:baseline;gap:10px;text-decoration:none}
+.brand-word{font-family:'Tiro Devanagari Hindi',serif;font-size:22px;color:var(--paper)}
+.brand-en{font-family:'Fraunces',serif;font-size:13px;color:var(--text-dim);letter-spacing:.08em;text-transform:uppercase}
+nav ul{display:flex;gap:22px;list-style:none;flex-wrap:wrap}
+nav a.navlink{color:var(--text-soft);text-decoration:none;font-size:14px;font-family:'JetBrains Mono',monospace}
+nav a.navlink:hover{color:var(--marigold)}
+nav a.navlink.active{color:var(--marigold)}
+
+/* page header */
+.page-hero{padding:64px 0 48px;border-bottom:1px solid var(--border)}
+.section-label{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--marigold);letter-spacing:.1em;text-transform:uppercase;margin-bottom:14px}
+.page-title{font-family:'Fraunces',serif;font-weight:500;font-size:clamp(30px,5vw,44px);color:var(--paper);margin-bottom:14px}
+.page-sub{max-width:600px;color:var(--text-soft);font-size:16.5px}
+
+section{padding:56px 0}
+section.bordered{border-bottom:1px solid var(--border)}
+h2{font-family:'Fraunces',serif;font-weight:500;font-size:27px;color:var(--paper);margin-bottom:18px}
+h3{font-family:'Fraunces',serif;font-weight:500;font-size:19px;color:var(--paper);margin-bottom:10px}
+.lede{max-width:640px;color:var(--text-soft);margin-bottom:14px}
+
+/* buttons */
+.btn{display:inline-block;padding:13px 24px;border-radius:3px;font-family:'JetBrains Mono',monospace;font-size:14px;text-decoration:none;border:1px solid var(--border)}
+.btn-primary{background:var(--marigold);color:#2b1c05;border-color:var(--marigold)}
+.btn-ghost{color:var(--paper);border-color:var(--border)}
+.btn-ghost:hover{border-color:var(--text-dim)}
+.cta-row{display:flex;gap:14px;flex-wrap:wrap;margin-top:24px}
+
+/* keyword grid (shared by home + keywords page) */
+.kw-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1px;background:var(--border);border:1px solid var(--border);margin-top:20px}
+.kw-card{background:var(--ink);padding:18px 18px 16px}
+.kw-deva{font-family:'Tiro Devanagari Hindi',serif;font-size:26px;color:var(--paper);display:block}
+.kw-en{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--text-dim);margin-top:4px;text-transform:lowercase}
+.kw-meaning{font-size:13.5px;color:var(--mehendi);margin-top:8px}
+.kw-group-title{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--text-dim);text-transform:uppercase;letter-spacing:.08em;margin:36px 0 4px}
+
+/* steps */
+.steps{counter-reset:step;margin-top:22px}
+.step{display:grid;grid-template-columns:40px 1fr;gap:18px;padding:20px 0;border-top:1px solid var(--border)}
+.step:last-child{border-bottom:1px solid var(--border)}
+.step-num{counter-increment:step;font-family:'JetBrains Mono',monospace;color:var(--marigold);font-size:14px;padding-top:2px}
+.step-num::before{content:"0" counter(step)}
+.step-title{color:var(--paper);font-family:'Fraunces',serif;font-size:17px;margin-bottom:6px}
+.step-body{font-size:14.5px;color:var(--text-soft)}
+pre.code-block{background:var(--ink-2);border:1px solid var(--border);border-radius:4px;padding:14px 16px;margin-top:10px;overflow-x:auto;font-family:'JetBrains Mono',monospace;font-size:13.5px;color:var(--paper);white-space:pre-wrap}
+
+/* examples */
+.example{margin-top:34px;padding-top:28px;border-top:1px solid var(--border)}
+.example:first-of-type{border-top:none;padding-top:0}
+.example-title{font-family:'Fraunces',serif;color:var(--paper);font-size:18px;margin-bottom:4px}
+.example-desc{font-size:14px;color:var(--text-dim);margin-bottom:12px}
+.example-pair{display:grid;grid-template-columns:1.3fr 1fr;gap:14px}
+.code-pane,.out-pane{border:1px solid var(--border);border-radius:4px;padding:14px 16px;font-family:'JetBrains Mono',monospace;font-size:13px}
+.code-pane{background:var(--ink-2);color:var(--paper);white-space:pre}
+.out-pane{background:#0f1410;color:var(--mehendi);white-space:pre}
+.pane-label{font-size:11px;color:var(--text-dim);text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px;font-family:'JetBrains Mono',monospace}
+
+/* guide / lessons */
+.lesson{border:1px solid var(--border);border-radius:4px;padding:22px 24px;margin-bottom:18px}
+.lesson-level{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--marigold);text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px}
+.lesson h3{margin-bottom:8px}
+.lesson p{font-size:14.5px;color:var(--text-soft);margin-bottom:12px}
+
+/* callouts */
+.callout{border-left:3px solid var(--rose);background:var(--ink-2);padding:14px 18px;margin:18px 0;font-size:14.5px;border-radius:0 4px 4px 0}
+.callout-title{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--rose);text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px}
+
+/* about */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-top:24px}
+.about-card .deva-lead{font-family:'Tiro Devanagari Hindi',serif;font-size:19px;color:var(--paper);margin-bottom:8px;display:block}
+.about-card p{color:var(--text-soft);font-size:15.5px}
+
+table.ref-table{width:100%;border-collapse:collapse;margin-top:14px;font-size:14.5px}
+table.ref-table th{text-align:left;color:var(--text-dim);font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.06em;padding:8px 10px;border-bottom:1px solid var(--border)}
+table.ref-table td{padding:10px;border-bottom:1px solid var(--border);color:var(--text-soft)}
+table.ref-table td.deva-cell{font-family:'Tiro Devanagari Hindi',serif;font-size:17px;color:var(--paper)}
+
+footer{padding:48px 0;text-align:center;border-top:1px solid var(--border)}
+footer p{font-size:13px;color:var(--text-dim);font-family:'JetBrains Mono',monospace}
+footer .deva{color:var(--text-soft);font-size:15px;margin-bottom:8px;display:block}
+
+@media (max-width:680px){
+  .about-grid{grid-template-columns:1fr}
+  .example-pair{grid-template-columns:1fr}
+  nav ul{display:none}
+}

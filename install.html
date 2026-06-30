@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>इंस्टॉल करो — बोलो</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi:ital@0;1&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=JetBrains+Mono:wght@400;500&family=Source+Serif+4:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="brand" href="index.html">
+      <span class="brand-word">बोलो</span>
+      <span class="brand-en">bolo lang</span>
+    </a>
+    <ul>
+      <li><a class="navlink" href="index.html">होम</a></li>
+      <li><a class="navlink active" href="install.html">इंस्टॉल</a></li>
+      <li><a class="navlink" href="keywords.html">शब्दकोश</a></li>
+      <li><a class="navlink" href="guide.html">गाइड</a></li>
+      <li><a class="navlink" href="examples.html">उदाहरण</a></li>
+      <li><a class="navlink" href="about.html">परिचय</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="page-hero">
+  <div class="wrap">
+    <div class="section-label">इंस्टॉलेशन</div>
+    <h1 class="page-title">बोलो चलाना शुरू करो</h1>
+    <p class="page-sub">पाँच चरण, पूरी तरह मुफ़्त, कोई भुगतान नहीं। Windows, Mac, और Linux तीनों पर काम करता है।</p>
+  </div>
+</header>
+
+<section class="bordered">
+  <div class="wrap">
+    <div class="steps">
+      <div class="step">
+        <div class="step-num"></div>
+        <div>
+          <div class="step-title">Go इंस्टॉल करो</div>
+          <div class="step-body">go.dev/dl से अपने operating system के लिए Go installer download करो और चलाओ। फिर एक नया terminal खोलकर जाँचो:</div>
+          <pre class="code-block">go version</pre>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-num"></div>
+        <div>
+          <div class="step-title">एक code editor लो</div>
+          <div class="step-body">VS Code मुफ़्त है (code.visualstudio.com)। चाहो तो Antigravity CLI जैसा AI coding agent भी जोड़ सकते हो, उसका free tier भी काम करता है।</div>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-num"></div>
+        <div>
+          <div class="step-title">बोलो project लो</div>
+          <div class="step-body">repository clone करो या ZIP download करके किसी folder में रखो, जैसे:</div>
+          <pre class="code-block">git clone &lt;repo-url&gt; bolo
+cd bolo</pre>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-num"></div>
+        <div>
+          <div class="step-title">build करो</div>
+          <div class="step-body">project folder के अंदर terminal में चलाओ:</div>
+          <pre class="code-block">go mod tidy
+go build -o bolo.exe main.go</pre>
+          <div class="step-body" style="margin-top:8px">Mac/Linux पर फ़ाइल का नाम सिर्फ़ <span class="mono">bolo</span> होगा, <span class="mono">.exe</span> नहीं।</div>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-num"></div>
+        <div>
+          <div class="step-title">अपना पहला प्रोग्राम चलाओ</div>
+          <div class="step-body"><span class="mono">examples/hello.bolo</span> नाम की फ़ाइल बनाओ:</div>
+          <pre class="code-block">मान क = 10
+मान ख = 5
+छापो (क + ख)</pre>
+          <div class="step-body" style="margin-top:8px">फिर चलाओ:</div>
+          <pre class="code-block">./bolo.exe examples/hello.bolo</pre>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-label">समस्या निवारण</div>
+    <h2>अक्सर आने वाली दिक़्क़तें</h2>
+
+    <div class="callout">
+      <div class="callout-title">"The system cannot find the file specified"</div>
+      इसका मतलब है फ़ाइल का path ग़लत है। जाँचो कि फ़ाइल कहाँ है &mdash; terminal में <span class="mono">pwd</span> चलाकर अपना current folder देखो, फिर सही path से फ़ाइल चलाओ।
+    </div>
+
+    <div class="callout">
+      <div class="callout-title">'go' is not recognized / go: not found</div>
+      Go सही से install नहीं हुआ, या terminal को restart करना बाक़ी है। Go install करने के बाद हमेशा एक नया terminal खोलो।
+    </div>
+
+    <div class="callout">
+      <div class="callout-title">कई छापो calls एक ही लाइन में जुड़ जाते हैं</div>
+      यह एक पुराना bug था जो ठीक कर दिया गया है। अगर फिर भी दिखे, तो latest project version download करो।
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span class="deva">बोलो</span>
+    <p>एक हिंदी-वाक्य प्रोग्रामिंग भाषा &middot; Go में बनी &middot; पूरी तरह open और मुफ़्त</p>
+  </div>
+</footer>
+
+</body>
+</html>

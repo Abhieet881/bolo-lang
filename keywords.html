@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>शब्दकोश — बोलो</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi:ital@0;1&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=JetBrains+Mono:wght@400;500&family=Source+Serif+4:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="brand" href="index.html">
+      <span class="brand-word">बोलो</span>
+      <span class="brand-en">bolo lang</span>
+    </a>
+    <ul>
+      <li><a class="navlink" href="index.html">होम</a></li>
+      <li><a class="navlink" href="install.html">इंस्टॉल</a></li>
+      <li><a class="navlink active" href="keywords.html">शब्दकोश</a></li>
+      <li><a class="navlink" href="guide.html">गाइड</a></li>
+      <li><a class="navlink" href="examples.html">उदाहरण</a></li>
+      <li><a class="navlink" href="about.html">परिचय</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="page-hero">
+  <div class="section-label">&nbsp;</div>
+  <div class="wrap">
+    <div class="section-label">शब्दकोश</div>
+    <h1 class="page-title">पूरा keyword संदर्भ</h1>
+    <p class="page-sub">हर शब्द जो बोलो की भाषा बनाता है &mdash; श्रेणी अनुसार।</p>
+  </div>
+</header>
+
+<section class="bordered">
+  <div class="wrap">
+
+    <div class="kw-group-title">चर और मान (variables &amp; values)</div>
+    <div class="kw-grid">
+      <div class="kw-card"><span class="kw-deva">मान</span><span class="kw-en">let</span><div class="kw-meaning">चर घोषित करना</div></div>
+      <div class="kw-card"><span class="kw-deva">सत्य</span><span class="kw-en">true</span><div class="kw-meaning">सही मान</div></div>
+      <div class="kw-card"><span class="kw-deva">असत्य</span><span class="kw-en">false</span><div class="kw-meaning">ग़लत मान</div></div>
+      <div class="kw-card"><span class="kw-deva">रिक्त</span><span class="kw-en">null</span><div class="kw-meaning">कोई मान नहीं</div></div>
+    </div>
+
+    <div class="kw-group-title">नियंत्रण प्रवाह (control flow)</div>
+    <div class="kw-grid">
+      <div class="kw-card"><span class="kw-deva">अगर</span><span class="kw-en">if</span><div class="kw-meaning">शर्त जाँचना</div></div>
+      <div class="kw-card"><span class="kw-deva">नहीं_तो</span><span class="kw-en">else</span><div class="kw-meaning">वरना यह करो</div></div>
+      <div class="kw-card"><span class="kw-deva">जब_तक</span><span class="kw-en">while</span><div class="kw-meaning">जब तक सच हो, दोहराओ</div></div>
+      <div class="kw-card"><span class="kw-deva">के_लिए</span><span class="kw-en">for</span><div class="kw-meaning">गिनती के साथ दोहराना</div></div>
+      <div class="kw-card"><span class="kw-deva">रोको</span><span class="kw-en">break</span><div class="kw-meaning">लूप रोकना</div></div>
+      <div class="kw-card"><span class="kw-deva">जारी_रखो</span><span class="kw-en">continue</span><div class="kw-meaning">अगले चरण पर जाना</div></div>
+    </div>
+
+    <div class="kw-group-title">फ़ंक्शन (functions)</div>
+    <div class="kw-grid">
+      <div class="kw-card"><span class="kw-deva">कार्य</span><span class="kw-en">function</span><div class="kw-meaning">फ़ंक्शन परिभाषित करना</div></div>
+      <div class="kw-card"><span class="kw-deva">वापस</span><span class="kw-en">return</span><div class="kw-meaning">मान लौटाना</div></div>
+    </div>
+
+    <div class="kw-group-title">input / output</div>
+    <div class="kw-grid">
+      <div class="kw-card"><span class="kw-deva">छापो</span><span class="kw-en">print()</span><div class="kw-meaning">स्क्रीन पर दिखाना</div></div>
+    </div>
+
+    <div class="kw-group-title">built-in functions</div>
+    <div class="kw-grid">
+      <div class="kw-card"><span class="kw-deva">लंबाई</span><span class="kw-en">length()</span><div class="kw-meaning">string/array की लंबाई</div></div>
+      <div class="kw-card"><span class="kw-deva">प्रकार</span><span class="kw-en">type()</span><div class="kw-meaning">मान का प्रकार बताना</div></div>
+      <div class="kw-card"><span class="kw-deva">जोड़ो</span><span class="kw-en">append()</span><div class="kw-meaning">array में नया मान जोड़ना</div></div>
+      <div class="kw-card"><span class="kw-deva">पहला</span><span class="kw-en">first()</span><div class="kw-meaning">array का पहला तत्व</div></div>
+      <div class="kw-card"><span class="kw-deva">आखिरी</span><span class="kw-en">last()</span><div class="kw-meaning">array का आखिरी तत्व</div></div>
+    </div>
+
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-label">ऑपरेटर</div>
+    <h2>गणितीय और तुलनात्मक चिह्न</h2>
+    <table class="ref-table">
+      <tr><th>चिह्न</th><th>मतलब</th></tr>
+      <tr><td class="deva-cell mono">+ - * / %</td><td>जोड़, घटाव, गुणा, भाग, शेष (remainder)</td></tr>
+      <tr><td class="deva-cell mono">=</td><td>मान देना (assign)</td></tr>
+      <tr><td class="deva-cell mono">== !=</td><td>बराबर है, बराबर नहीं है</td></tr>
+      <tr><td class="deva-cell mono">&lt; &gt; &lt;= &gt;=</td><td>छोटा, बड़ा, छोटा-बराबर, बड़ा-बराबर</td></tr>
+      <tr><td class="deva-cell mono">&amp;&amp; ||</td><td>और (and), या (or)</td></tr>
+    </table>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span class="deva">बोलो</span>
+    <p>एक हिंदी-वाक्य प्रोग्रामिंग भाषा &middot; Go में बनी &middot; पूरी तरह open और मुफ़्त</p>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>गाइड — बोलो</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi:ital@0;1&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=JetBrains+Mono:wght@400;500&family=Source+Serif+4:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="brand" href="index.html">
+      <span class="brand-word">बोलो</span>
+      <span class="brand-en">bolo lang</span>
+    </a>
+    <ul>
+      <li><a class="navlink" href="index.html">होम</a></li>
+      <li><a class="navlink" href="install.html">इंस्टॉल</a></li>
+      <li><a class="navlink" href="keywords.html">शब्दकोश</a></li>
+      <li><a class="navlink active" href="guide.html">गाइड</a></li>
+      <li><a class="navlink" href="examples.html">उदाहरण</a></li>
+      <li><a class="navlink" href="about.html">परिचय</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="page-hero">
+  <div class="wrap">
+    <div class="section-label">सीखने की गाइड</div>
+    <h1 class="page-title">शुरुआत से आगे तक</h1>
+    <p class="page-sub">छह पाठ, आसान से कठिन तक। हर पाठ ख़ुद टाइप करके चलाओ &mdash; देखकर नहीं, हाथ से लिखकर सीखो।</p>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+
+    <div class="lesson">
+      <div class="lesson-level">पाठ १ &middot; शुरुआती</div>
+      <h3>चर और गणित</h3>
+      <p>मान से एक चर बनाओ, उसमें संख्या रखो, और छापो से परिणाम दिखाओ।</p>
+      <pre class="code-block">मान क = 10
+मान ख = 5
+छापो (क + ख)</pre>
+    </div>
+
+    <div class="lesson">
+      <div class="lesson-level">पाठ २ &middot; शुरुआती</div>
+      <h3>शर्त (if / else)</h3>
+      <p>अगर किसी शर्त को जाँचता है; अगर वह सच नहीं है, तो नहीं_तो वाला हिस्सा चलता है।</p>
+      <pre class="code-block">मान संख्या = 7
+अगर (संख्या % 2 == 0) {
+    छापो ("सम संख्या")
+} नहीं_तो {
+    छापो ("विषम संख्या")
+}</pre>
+    </div>
+
+    <div class="lesson">
+      <div class="lesson-level">पाठ ३ &middot; मध्यम</div>
+      <h3>लूप (जब_तक)</h3>
+      <p>जब_तक एक शर्त के सच होने तक बार-बार चलता है। यहाँ 1 से 10 तक जोड़ा जा रहा है।</p>
+      <pre class="code-block">मान योग = 0
+मान i = 1
+जब_तक (i <= 10) {
+    योग = योग + i
+    i = i + 1
+}
+छापो (योग)</pre>
+    </div>
+
+    <div class="lesson">
+      <div class="lesson-level">पाठ ४ &middot; मध्यम</div>
+      <h3>नेस्टेड शर्तें (FizzBuzz)</h3>
+      <p>एक लूप के अंदर कई अगर/नहीं_तो होने पर भी कोड साफ़ रहता है।</p>
+      <pre class="code-block">मान i = 1
+जब_तक (i <= 15) {
+    अगर (i % 15 == 0) {
+        छापो ("FizzBuzz")
+    } नहीं_तो अगर (i % 3 == 0) {
+        छापो ("Fizz")
+    } नहीं_तो अगर (i % 5 == 0) {
+        छापो ("Buzz")
+    } नहीं_तो {
+        छापो (i)
+    }
+    i = i + 1
+}</pre>
+    </div>
+
+    <div class="lesson">
+      <div class="lesson-level">पाठ ५ &middot; उन्नत</div>
+      <h3>फ़ंक्शन और recursion</h3>
+      <p>कार्य से एक फ़ंक्शन बनता है, जो वापस से मान लौटाता है &mdash; और ख़ुद को भी बुला सकता है।</p>
+      <pre class="code-block">कार्य फ़ैक्टोरियल(n) {
+    अगर (n <= 1) {
+        वापस 1
+    }
+    वापस n * फ़ैक्टोरियल(n - 1)
+}
+छापो (फ़ैक्टोरियल(5))</pre>
+    </div>
+
+    <div class="lesson">
+      <div class="lesson-level">पाठ ६ &middot; उन्नत</div>
+      <h3>array के साथ काम करना</h3>
+      <p>लंबाई और के_लिए को साथ में इस्तेमाल करके किसी सूची के हर तत्व पर काम करो।</p>
+      <pre class="code-block">मान फल = ["आम", "केला", "सेब"]
+मान i = 0
+जब_तक (i < लंबाई(फल)) {
+    छापो (फल[i])
+    i = i + 1
+}</pre>
+    </div>
+
+  </div>
+</section>
+
+<section class="bordered">
+  <div class="wrap">
+    <div class="section-label">आगे क्या</div>
+    <h2>अभ्यास के लिए विचार</h2>
+    <p class="lede">हर पाठ पूरा करने के बाद, ख़ुद से यह लिखकर देखो:</p>
+    <table class="ref-table">
+      <tr><th>#</th><th>अभ्यास</th></tr>
+      <tr><td class="mono">1</td><td>किसी संख्या को उल्टा करना (reverse a number)</td></tr>
+      <tr><td class="mono">2</td><td>array में सबसे बड़ी संख्या ढूँढना</td></tr>
+      <tr><td class="mono">3</td><td>दो संख्याओं का GCD निकालना (recursion से)</td></tr>
+      <tr><td class="mono">4</td><td>एक सरल कैलकुलेटर फ़ंक्शन बनाना</td></tr>
+    </table>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span class="deva">बोलो</span>
+    <p>एक हिंदी-वाक्य प्रोग्रामिंग भाषा &middot; Go में बनी &middot; पूरी तरह open और मुफ़्त</p>
+  </div>
+</footer>
+
+</body>
+</html>

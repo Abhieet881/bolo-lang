@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>बोलो — कोड वैसे लिखो जैसे तुम बोलते हो</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi:ital@0;1&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=JetBrains+Mono:wght@400;500&family=Source+Serif+4:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#16141c;
+    --ink-2:#1d1a24;
+    --paper:#f6f1e7;
+    --marigold:#e8a33d;
+    --mehendi:#8fae5e;
+    --rose:#c9695f;
+    --text-soft:#cdc6b8;
+    --text-dim:#8a8478;
+    --border:#332f3b;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--ink);
+    color:var(--text-soft);
+    font-family:'Source Serif 4', serif;
+    line-height:1.7;
+    font-size:17px;
+  }
+  .wrap{max-width:920px;margin:0 auto;padding:0 28px}
+  .deva{font-family:'Tiro Devanagari Hindi', serif}
+  .mono{font-family:'JetBrains Mono', monospace}
+  .gloss{
+    display:block;
+    font-family:'JetBrains Mono', monospace;
+    font-size:12px;
+    letter-spacing:.04em;
+    color:var(--text-dim);
+    text-transform:lowercase;
+  }
+
+  /* ---------- nav ---------- */
+  nav{
+    position:sticky;top:0;z-index:10;
+    background:rgba(22,20,28,.92);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--border);
+  }
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;padding:16px 28px}
+  .brand{display:flex;align-items:baseline;gap:10px}
+  .brand-word{font-family:'Tiro Devanagari Hindi',serif;font-size:22px;color:var(--paper)}
+  .brand-en{font-family:'Fraunces',serif;font-size:13px;color:var(--text-dim);letter-spacing:.08em;text-transform:uppercase}
+  nav ul{display:flex;gap:24px;list-style:none}
+  nav a{color:var(--text-soft);text-decoration:none;font-size:14px;font-family:'JetBrains Mono',monospace}
+  nav a:hover{color:var(--marigold)}
+
+  /* ---------- hero ---------- */
+  header.hero{padding:90px 0 70px;border-bottom:1px solid var(--border)}
+  .hero-eyebrow{
+    font-family:'JetBrains Mono',monospace;
+    font-size:13px;color:var(--mehendi);letter-spacing:.08em;
+    text-transform:lowercase;margin-bottom:28px;
+  }
+  .hero-word{
+    font-family:'Tiro Devanagari Hindi',serif;
+    font-size:clamp(64px,12vw,128px);
+    line-height:1;color:var(--paper);
+    margin-bottom:8px;
+  }
+  .hero-gloss{font-size:14px;color:var(--text-dim);margin-bottom:36px;font-family:'JetBrains Mono',monospace}
+  .hero-headline{
+    font-family:'Fraunces',serif;font-weight:500;
+    font-size:clamp(28px,4vw,42px);color:var(--paper);
+    max-width:620px;line-height:1.25;margin-bottom:20px;
+  }
+  .hero-sub{max-width:560px;color:var(--text-soft);font-size:17px;margin-bottom:36px}
+  .cta-row{display:flex;gap:14px;flex-wrap:wrap}
+  .btn{
+    display:inline-block;padding:13px 24px;border-radius:3px;
+    font-family:'JetBrains Mono',monospace;font-size:14px;
+    text-decoration:none;border:1px solid var(--border);
+  }
+  .btn-primary{background:var(--marigold);color:#2b1c05;border-color:var(--marigold)}
+  .btn-ghost{color:var(--paper);border-color:var(--border)}
+  .btn-ghost:hover{border-color:var(--text-dim)}
+
+  /* ---------- sections ---------- */
+  section{padding:64px 0}
+  section.bordered{border-bottom:1px solid var(--border)}
+  .section-label{
+    font-family:'JetBrains Mono',monospace;font-size:12px;
+    color:var(--marigold);letter-spacing:.1em;text-transform:uppercase;
+    margin-bottom:14px;
+  }
+  h2{font-family:'Fraunces',serif;font-weight:500;font-size:30px;color:var(--paper);margin-bottom:22px}
+  .lede{max-width:640px;color:var(--text-soft);margin-bottom:14px}
+
+  /* ---------- about ---------- */
+  .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-top:30px}
+  .about-card p{color:var(--text-soft);font-size:15.5px}
+  .about-card .deva-lead{font-family:'Tiro Devanagari Hindi',serif;font-size:19px;color:var(--paper);margin-bottom:8px;display:block}
+
+  /* ---------- keyword reference ---------- */
+  .kw-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1px;background:var(--border);border:1px solid var(--border);margin-top:30px}
+  .kw-card{background:var(--ink);padding:18px 18px 16px}
+  .kw-deva{font-family:'Tiro Devanagari Hindi',serif;font-size:26px;color:var(--paper);display:block}
+  .kw-en{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--text-dim);margin-top:4px;text-transform:lowercase}
+  .kw-meaning{font-size:13.5px;color:var(--mehendi);margin-top:8px}
+
+  /* ---------- getting started ---------- */
+  .steps{counter-reset:step;margin-top:30px}
+  .step{display:grid;grid-template-columns:40px 1fr;gap:18px;padding:20px 0;border-top:1px solid var(--border)}
+  .step:last-child{border-bottom:1px solid var(--border)}
+  .step-num{
+    counter-increment:step;font-family:'JetBrains Mono',monospace;
+    color:var(--marigold);font-size:14px;padding-top:2px;
+  }
+  .step-num::before{content:"0" counter(step)}
+  .step-title{color:var(--paper);font-family:'Fraunces',serif;font-size:17px;margin-bottom:6px}
+  .step-body{font-size:14.5px;color:var(--text-soft)}
+  pre.code-block{
+    background:var(--ink-2);border:1px solid var(--border);border-radius:4px;
+    padding:14px 16px;margin-top:10px;overflow-x:auto;
+    font-family:'JetBrains Mono',monospace;font-size:13.5px;color:var(--paper);
+  }
+
+  /* ---------- examples ---------- */
+  .example{margin-top:36px}
+  .example-title{font-family:'Fraunces',serif;color:var(--paper);font-size:18px;margin-bottom:4px}
+  .example-desc{font-size:14px;color:var(--text-dim);margin-bottom:12px}
+  .example-pair{display:grid;grid-template-columns:1.3fr 1fr;gap:14px}
+  .code-pane, .out-pane{
+    border:1px solid var(--border);border-radius:4px;padding:14px 16px;
+    font-family:'JetBrains Mono',monospace;font-size:13px;
+  }
+  .code-pane{background:var(--ink-2);color:var(--paper);white-space:pre}
+  .out-pane{background:#0f1410;color:var(--mehendi)}
+  .pane-label{font-size:11px;color:var(--text-dim);text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px;font-family:'JetBrains Mono',monospace}
+
+  @media (max-width:680px){
+    .about-grid{grid-template-columns:1fr}
+    .example-pair{grid-template-columns:1fr}
+    nav ul{display:none}
+  }
+
+  footer{padding:48px 0;text-align:center}
+  footer p{font-size:13px;color:var(--text-dim);font-family:'JetBrains Mono',monospace}
+  footer .deva{color:var(--text-soft);font-size:15px;margin-bottom:8px;display:block}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <div class="brand">
+      <span class="brand-word">बोलो</span>
+      <span class="brand-en">bolo lang</span>
+    </div>
+    <ul>
+      <li><a href="#about">परिचय</a></li>
+      <li><a href="#keywords">शब्दकोश</a></li>
+      <li><a href="#start">शुरुआत</a></li>
+      <li><a href="#examples">उदाहरण</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="hero-eyebrow">// एक प्रोग्रामिंग भाषा, हिंदी में</div>
+    <div class="hero-word">बोलो</div>
+    <div class="hero-gloss">bolo &mdash; literally, "speak"</div>
+    <h1 class="hero-headline">कोड वैसे लिखो, जैसे तुम बोलते हो।</h1>
+    <p class="hero-sub">बोलो एक प्रोग्रामिंग भाषा है जहाँ if, while, function जैसे शब्दों की जगह आप अगर, जब_तक, कार्य जैसे हिंदी शब्दों में कोड लिखते हैं। अंग्रेज़ी जाने बिना भी, अपनी भाषा में सोच कर कोड लिखो।</p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="#start">शुरू करो ↓</a>
+      <a class="btn btn-ghost" href="#keywords">शब्दकोश देखो</a>
+    </div>
+  </div>
+</header>
+
+<section class="bordered" id="about">
+  <div class="wrap">
+    <div class="section-label">परिचय</div>
+    <h2>यह किसके लिए है?</h2>
+    <p class="lede">ज़्यादातर प्रोग्रामिंग भाषाएँ अंग्रेज़ी keywords पर बनी हैं &mdash; if, else, while, function। जो लोग अंग्रेज़ी में सहज नहीं हैं, उनके लिए यह एक अतिरिक्त रुकावट है, असली प्रोग्रामिंग सीखने से पहले ही। बोलो उस रुकावट को हटाने की कोशिश है।</p>
+    <div class="about-grid">
+      <div class="about-card">
+        <span class="deva-lead">हिंदी भाषियों के लिए</span>
+        <p>स्कूल के बच्चे और शुरुआती सीखने वाले, जिनके लिए हिंदी पहली भाषा है &mdash; वे logic और syntax पर ध्यान दे सकते हैं, अंग्रेज़ी अनुवाद पर नहीं।</p>
+      </div>
+      <div class="about-card">
+        <span class="deva-lead">developers के लिए</span>
+        <p>यह Go में लिखा गया एक पूरा tree-walking interpreter है &mdash; lexer, parser, evaluator, closures, recursion सब काम करता है। एक भाषा कैसे बनती है, यह समझने का एक असली project।</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="bordered" id="keywords">
+  <div class="wrap">
+    <div class="section-label">शब्दकोश</div>
+    <h2>हर keyword का मतलब</h2>
+    <p class="lede">यही शब्द हैं जिनसे बोलो में पूरा प्रोग्राम लिखा जाता है।</p>
+    <div class="kw-grid">
+      <div class="kw-card"><span class="kw-deva">मान</span><span class="kw-en">let</span><div class="kw-meaning">चर घोषित करना (variable declare)</div></div>
+      <div class="kw-card"><span class="kw-deva">अगर</span><span class="kw-en">if</span><div class="kw-meaning">शर्त जाँचना</div></div>
+      <div class="kw-card"><span class="kw-deva">नहीं_तो</span><span class="kw-en">else</span><div class="kw-meaning">वरना यह करो</div></div>
+      <div class="kw-card"><span class="kw-deva">जब_तक</span><span class="kw-en">while</span><div class="kw-meaning">जब तक सच हो, दोहराओ</div></div>
+      <div class="kw-card"><span class="kw-deva">के_लिए</span><span class="kw-en">for</span><div class="kw-meaning">गिनती के साथ दोहराना</div></div>
+      <div class="kw-card"><span class="kw-deva">कार्य</span><span class="kw-en">function</span><div class="kw-meaning">फ़ंक्शन परिभाषित करना</div></div>
+      <div class="kw-card"><span class="kw-deva">वापस</span><span class="kw-en">return</span><div class="kw-meaning">मान लौटाना</div></div>
+      <div class="kw-card"><span class="kw-deva">छापो</span><span class="kw-en">print</span><div class="kw-meaning">स्क्रीन पर दिखाना</div></div>
+      <div class="kw-card"><span class="kw-deva">सत्य</span><span class="kw-en">true</span><div class="kw-meaning">सही मान</div></div>
+      <div class="kw-card"><span class="kw-deva">असत्य</span><span class="kw-en">false</span><div class="kw-meaning">ग़लत मान</div></div>
+      <div class="kw-card"><span class="kw-deva">रिक्त</span><span class="kw-en">null</span><div class="kw-meaning">कोई मान नहीं</div></div>
+      <div class="kw-card"><span class="kw-deva">रोको</span><span class="kw-en">break</span><div class="kw-meaning">लूप रोकना</div></div>
+      <div class="kw-card"><span class="kw-deva">जारी_रखो</span><span class="kw-en">continue</span><div class="kw-meaning">अगले चरण पर जाना</div></div>
+      <div class="kw-card"><span class="kw-deva">लंबाई</span><span class="kw-en">length()</span><div class="kw-meaning">लंबाई पता करना</div></div>
+      <div class="kw-card"><span class="kw-deva">जोड़ो</span><span class="kw-en">append()</span><div class="kw-meaning">array में जोड़ना</div></div>
+      <div class="kw-card"><span class="kw-deva">प्रकार</span><span class="kw-en">type()</span><div class="kw-meaning">मान का प्रकार</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="bordered" id="start">
+  <div class="wrap">
+    <div class="section-label">शुरुआत</div>
+    <h2>बोलो चलाना शुरू करो</h2>
+    <p class="lede">चार आसान चरण &mdash; पूरी तरह मुफ़्त, कोई भुगतान नहीं।</p>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num"></div>
+        <div>
+          <div class="step-title">Go install करो</div>
+          <div class="step-body">go.dev/dl से Go download करके install करो। फिर terminal में जाँचो:</div>
+          <pre class="code-block">go version</pre>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num"></div>
+        <div>
+          <div class="step-title">बोलो project लो</div>
+          <div class="step-body">repository clone करो या ZIP download करके अपने folder में रखो।</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num"></div>
+        <div>
+          <div class="step-title">build करो</div>
+          <div class="step-body">project folder में terminal खोलो और चलाओ:</div>
+          <pre class="code-block">go build -o bolo.exe main.go</pre>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num"></div>
+        <div>
+          <div class="step-title">अपना पहला प्रोग्राम चलाओ</div>
+          <div class="step-body"><span class="mono">hello.bolo</span> नाम की फ़ाइल बनाओ, यह लिखो, फिर चलाओ:</div>
+          <pre class="code-block">मान क = 10
+मान ख = 5
+छापो (क + ख)</pre>
+          <pre class="code-block">./bolo.exe hello.bolo</pre>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="examples">
+  <div class="wrap">
+    <div class="section-label">उदाहरण</div>
+    <h2>असली चलते हुए प्रोग्राम</h2>
+    <p class="lede">यह सब हाथ से लिखे और चलाए गए &mdash; नीचे असली output है।</p>
+
+    <div class="example">
+      <div class="example-title">सम या विषम (even / odd)</div>
+      <div class="example-desc">शर्त जाँचना &mdash; अगर / नहीं_तो</div>
+      <div class="example-pair">
+        <div class="code-pane">मान संख्या = 7
+अगर (संख्या % 2 == 0) {
+    छापो ("सम संख्या")
+} नहीं_तो {
+    छापो ("विषम संख्या")
+}</div>
+        <div>
+          <div class="pane-label">output</div>
+          <div class="out-pane">विषम संख्या</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="example">
+      <div class="example-title">1 से 10 तक का योग</div>
+      <div class="example-desc">लूप और चर का दोबारा उपयोग &mdash; जब_तक</div>
+      <div class="example-pair">
+        <div class="code-pane">मान योग = 0
+मान i = 1
+जब_तक (i <= 10) {
+    योग = योग + i
+    i = i + 1
+}
+छापो ("योग है:")
+छापो (योग)</div>
+        <div>
+          <div class="pane-label">output</div>
+          <div class="out-pane">योग है:
+55</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="example">
+      <div class="example-title">फ़ैक्टोरियल (recursion)</div>
+      <div class="example-desc">फ़ंक्शन जो खुद को बुलाता है &mdash; कार्य / वापस</div>
+      <div class="example-pair">
+        <div class="code-pane">कार्य फ़ैक्टोरियल(n) {
+    अगर (n <= 1) {
+        वापस 1
+    }
+    वापस n * फ़ैक्टोरियल(n - 1)
+}
+छापो (फ़ैक्टोरियल(5))</div>
+        <div>
+          <div class="pane-label">output</div>
+          <div class="out-pane">120</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span class="deva">बोलो</span>
+    <p>एक हिंदी-वाक्य प्रोग्रामिंग भाषा &middot; Go में बनी &middot; पूरी तरह open और मुफ़्त</p>
+  </div>
+</footer>
+
+</body>
+</html>

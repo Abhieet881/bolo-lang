@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>परिचय — बोलो</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi:ital@0;1&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=JetBrains+Mono:wght@400;500&family=Source+Serif+4:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="brand" href="index.html">
+      <span class="brand-word">बोलो</span>
+      <span class="brand-en">bolo lang</span>
+    </a>
+    <ul>
+      <li><a class="navlink" href="index.html">होम</a></li>
+      <li><a class="navlink" href="install.html">इंस्टॉल</a></li>
+      <li><a class="navlink" href="keywords.html">शब्दकोश</a></li>
+      <li><a class="navlink" href="guide.html">गाइड</a></li>
+      <li><a class="navlink" href="examples.html">उदाहरण</a></li>
+      <li><a class="navlink active" href="about.html">परिचय</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="page-hero">
+  <div class="wrap">
+    <div class="section-label">परिचय</div>
+    <h1 class="page-title">बोलो क्यों बनी</h1>
+    <p class="page-sub">एक भाषा सीखने से पहले, एक भाषा की वजह से रुक जाना &mdash; यह सही नहीं लगा।</p>
+  </div>
+</header>
+
+<section class="bordered">
+  <div class="wrap">
+    <div class="about-grid">
+      <div class="about-card">
+        <span class="deva-lead">पहला कदम</span>
+        <p>हर प्रोग्रामिंग भाषा if, while, function जैसे अंग्रेज़ी शब्दों पर बनी है। जिनकी पहली भाषा हिंदी है, उनके लिए कोडिंग सीखना मतलब पहले अंग्रेज़ी के शब्द याद करना, फिर logic समझना। बोलो उस पहले कदम को हटा देती है।</p>
+      </div>
+      <div class="about-card">
+        <span class="deva-lead">प्रेरणा</span>
+        <p>जापान में Nadesiko (なでしこ) नाम की भाषा है, जो पूरी तरह जापानी वाक्यों में लिखी जाती है, और स्कूलों में पढ़ाई भी जाती है। बोलो वही विचार है, हिंदी में &mdash; पूरी प्रोग्रामिंग logic को देवनागरी में लिखने की कोशिश।</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="bordered">
+  <div class="wrap">
+    <div class="section-label">कैसे बनी</div>
+    <h2>तकनीकी पक्ष</h2>
+    <p class="lede">बोलो Go भाषा में लिखा गया एक tree-walking interpreter है, जिसके चार मुख्य हिस्से हैं:</p>
+    <table class="ref-table">
+      <tr><th>हिस्सा</th><th>काम</th></tr>
+      <tr><td class="mono">lexer</td><td>देवनागरी कोड को tokens में तोड़ना</td></tr>
+      <tr><td class="mono">parser</td><td>tokens से एक syntax tree बनाना</td></tr>
+      <tr><td class="mono">evaluator</td><td>उस tree को चलाकर असली परिणाम निकालना</td></tr>
+      <tr><td class="mono">environment</td><td>चर और scope को संभालना, closures सहित</td></tr>
+    </table>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-label">आगे का रास्ता</div>
+    <h2>यह अभी भी बढ़ रही है</h2>
+    <p class="lede">बोलो अभी एक शुरुआती, सीखने के लिए बनी भाषा है &mdash; production के लिए नहीं। अगर तुम भी हिंदी में कोड लिखना चाहते हो, इसे आज़माओ, गलतियाँ ढूँढो, और सुधारो।</p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="install.html">अभी शुरू करो</a>
+      <a class="btn btn-ghost" href="guide.html">पाठ देखो</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span class="deva">बोलो</span>
+    <p>एक हिंदी-वाक्य प्रोग्रामिंग भाषा &middot; Go में बनी &middot; पूरी तरह open और मुफ़्त</p>
+  </div>
+</footer>
+
+</body>
+</html>

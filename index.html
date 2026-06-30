@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>बोलो — कोड वैसे लिखो जैसे तुम बोलते हो</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi:ital@0;1&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=JetBrains+Mono:wght@400;500&family=Source+Serif+4:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="brand" href="index.html">
+      <span class="brand-word">बोलो</span>
+      <span class="brand-en">bolo lang</span>
+    </a>
+    <ul>
+      <li><a class="navlink active" href="index.html">होम</a></li>
+      <li><a class="navlink" href="install.html">इंस्टॉल</a></li>
+      <li><a class="navlink" href="keywords.html">शब्दकोश</a></li>
+      <li><a class="navlink" href="guide.html">गाइड</a></li>
+      <li><a class="navlink" href="examples.html">उदाहरण</a></li>
+      <li><a class="navlink" href="about.html">परिचय</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="page-hero">
+  <div class="wrap">
+    <div class="section-label">// एक प्रोग्रामिंग भाषा, हिंदी में</div>
+    <div class="page-title deva" style="font-size:clamp(64px,12vw,128px);line-height:1;margin-bottom:4px">बोलो</div>
+    <div class="mono" style="font-size:14px;color:var(--text-dim);margin-bottom:30px">bolo &mdash; literally, "speak"</div>
+    <h1 class="page-title" style="font-size:clamp(26px,4vw,38px)">कोड वैसे लिखो, जैसे तुम बोलते हो।</h1>
+    <p class="page-sub">बोलो एक प्रोग्रामिंग भाषा है जहाँ if, while, function जैसे शब्दों की जगह अगर, जब_तक, कार्य जैसे हिंदी शब्दों में कोड लिखा जाता है। अंग्रेज़ी जाने बिना भी, अपनी भाषा में सोच कर कोड लिखो।</p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="install.html">शुरू करो ↓</a>
+      <a class="btn btn-ghost" href="keywords.html">शब्दकोश देखो</a>
+    </div>
+  </div>
+</header>
+
+<section class="bordered">
+  <div class="wrap">
+    <div class="section-label">परिचय</div>
+    <h2>यह किसके लिए है?</h2>
+    <p class="lede">ज़्यादातर प्रोग्रामिंग भाषाएँ अंग्रेज़ी keywords पर बनी हैं। जो लोग अंग्रेज़ी में सहज नहीं हैं, उनके लिए यह असली प्रोग्रामिंग सीखने से पहले ही एक रुकावट बन जाती है। बोलो उस रुकावट को हटाने की कोशिश है।</p>
+    <div class="about-grid">
+      <div class="about-card">
+        <span class="deva-lead">हिंदी भाषियों के लिए</span>
+        <p>स्कूल के बच्चे और शुरुआती सीखने वाले logic और syntax पर ध्यान दे सकते हैं, अंग्रेज़ी अनुवाद पर नहीं।</p>
+      </div>
+      <div class="about-card">
+        <span class="deva-lead">developers के लिए</span>
+        <p>Go में लिखा गया एक पूरा tree-walking interpreter &mdash; lexer, parser, evaluator, closures, recursion सब काम करता है।</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-label">एक झलक</div>
+    <h2>कोड कैसा दिखता है</h2>
+    <div class="example">
+      <div class="example-pair">
+        <div class="code-pane">मान संख्या = 7
+अगर (संख्या % 2 == 0) {
+    छापो ("सम संख्या")
+} नहीं_तो {
+    छापो ("विषम संख्या")
+}</div>
+        <div>
+          <div class="pane-label">output</div>
+          <div class="out-pane">विषम संख्या</div>
+        </div>
+      </div>
+    </div>
+    <div class="cta-row">
+      <a class="btn btn-ghost" href="examples.html">और उदाहरण देखो →</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span class="deva">बोलो</span>
+    <p>एक हिंदी-वाक्य प्रोग्रामिंग भाषा &middot; Go में बनी &middot; पूरी तरह open और मुफ़्त</p>
+  </div>
+</footer>
+
+</body>
+</html>

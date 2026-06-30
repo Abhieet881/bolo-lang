@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>उदाहरण — बोलो</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi:ital@0;1&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=JetBrains+Mono:wght@400;500&family=Source+Serif+4:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="brand" href="index.html">
+      <span class="brand-word">बोलो</span>
+      <span class="brand-en">bolo lang</span>
+    </a>
+    <ul>
+      <li><a class="navlink" href="index.html">होम</a></li>
+      <li><a class="navlink" href="install.html">इंस्टॉल</a></li>
+      <li><a class="navlink" href="keywords.html">शब्दकोश</a></li>
+      <li><a class="navlink" href="guide.html">गाइड</a></li>
+      <li><a class="navlink active" href="examples.html">उदाहरण</a></li>
+      <li><a class="navlink" href="about.html">परिचय</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="page-hero">
+  <div class="wrap">
+    <div class="section-label">उदाहरण</div>
+    <h1 class="page-title">असली चलते हुए प्रोग्राम</h1>
+    <p class="page-sub">यह सब हाथ से लिखे और चलाए गए हैं &mdash; नीचे असली, verified output है, अंदाज़ा नहीं।</p>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+
+    <div class="example">
+      <div class="example-title">सम या विषम (even / odd)</div>
+      <div class="example-desc">शर्त जाँचना &mdash; अगर / नहीं_तो</div>
+      <div class="example-pair">
+        <div class="code-pane">मान संख्या = 7
+अगर (संख्या % 2 == 0) {
+    छापो ("सम संख्या")
+} नहीं_तो {
+    छापो ("विषम संख्या")
+}</div>
+        <div>
+          <div class="pane-label">output</div>
+          <div class="out-pane">विषम संख्या</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="example">
+      <div class="example-title">1 से 10 तक का योग</div>
+      <div class="example-desc">लूप और चर का दोबारा उपयोग &mdash; जब_तक</div>
+      <div class="example-pair">
+        <div class="code-pane">मान योग = 0
+मान i = 1
+जब_तक (i <= 10) {
+    योग = योग + i
+    i = i + 1
+}
+छापो ("योग है:")
+छापो (योग)</div>
+        <div>
+          <div class="pane-label">output</div>
+          <div class="out-pane">योग है:
+55</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="example">
+      <div class="example-title">फ़ैक्टोरियल (recursion)</div>
+      <div class="example-desc">फ़ंक्शन जो खुद को बुलाता है &mdash; कार्य / वापस</div>
+      <div class="example-pair">
+        <div class="code-pane">कार्य फ़ैक्टोरियल(n) {
+    अगर (n <= 1) {
+        वापस 1
+    }
+    वापस n * फ़ैक्टोरियल(n - 1)
+}
+छापो (फ़ैक्टोरियल(5))</div>
+        <div>
+          <div class="pane-label">output</div>
+          <div class="out-pane">120</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="example">
+      <div class="example-title">फिबोनाची (fibonacci)</div>
+      <div class="example-desc">recursion, दूसरे base case के साथ</div>
+      <div class="example-pair">
+        <div class="code-pane">कार्य फ़िबोनाची(n) {
+    अगर (n <= 1) {
+        वापस n
+    }
+    वापस फ़िबोनाची(n - 1) + फ़िबोनाची(n - 2)
+}
+छापो (फ़िबोनाची(7))</div>
+        <div>
+          <div class="pane-label">output</div>
+          <div class="out-pane">13</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="example">
+      <div class="example-title">array पर लूप</div>
+      <div class="example-desc">के_लिए / जब_तक और array indexing</div>
+      <div class="example-pair">
+        <div class="code-pane">मान फल = ["आम", "केला", "सेब", "संतरा"]
+मान i = 0
+छापो ("सभी फलों के नाम:")
+जब_तक (i < लंबाई(फल)) {
+    छापो (फल[i])
+    i = i + 1
+}</div>
+        <div>
+          <div class="pane-label">output</div>
+          <div class="out-pane">सभी फलों के नाम:
+आम
+केला
+सेब
+संतरा</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span class="deva">बोलो</span>
+    <p>एक हिंदी-वाक्य प्रोग्रामिंग भाषा &middot; Go में बनी &middot; पूरी तरह open और मुफ़्त</p>
+  </div>
+</footer>
+
+</body>
+</html>
