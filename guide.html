@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html lang="hi">
+<html lang="hi" translate="no">
 <head>
 <meta charset="UTF-8">
+<meta name="google" content="notranslate">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>गाइड — बोलो</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -168,13 +169,17 @@
       <div class="lesson-level">पाठ ८ &middot; मध्यम</div>
       <h3>नेस्टेड लूप (Nested Loops)</h3>
       <p><strong>क्यों सीखें:</strong> जब हमें किसी ग्रिड (जैसे शतरंज का बोर्ड, 2D ग्रिड) या किसी पैटर्न पर काम करना होता है, तो हमें लूप के अंदर दूसरा लूप चलाना पड़ता है। इसे नेस्टेड लूप कहते हैं।</p>
-      <p>के_लिए लूप के अंदर एक और के_लिए लूप चलाकर स्टार (*) का एक सुंदर त्रिभुज (triangle) पैटर्न छापें।</p>
-      <pre class="code-block">के_लिए (मान i = 1; i <= 5; i = i + 1) {
+      <p>जब_तक लूप के अंदर एक और जब_तक लूप चलाकर स्टार (*) का एक सुंदर त्रिभुज (triangle) पैटर्न छापें।</p>
+      <pre class="code-block">मान i = 1
+जब_तक (i <= 5) {
     मान पंक्ति = ""
-    के_लिए (मान j = 1; j <= i; j = j + 1) {
+    मान j = 1
+    जब_तक (j <= i) {
         पंक्ति = पंक्ति + "*"
+        j = j + 1
     }
     छापो (पंक्ति)
+    i = i + 1
 }</pre>
       <div class="callout">
         <div class="callout-title">इसे बदल कर देखो</div>
